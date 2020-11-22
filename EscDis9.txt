@@ -1,0 +1,200 @@
+inline void wdt_reset() {if (!WDT->SYNCBUSY.bit.CLEAR) WDT->CLEAR.reg = WDT_CLEAR_CLEAR_KEY;}
+00001320 03.9b                 ldr	r3, [sp, #12]		 
+00001322 9b.68                 ldr	r3, [r3, #8]		 
+--- No source file -------------------------------------------------------------
+00001324 db.06                 lsls	r3, r3, #27		 
+00001326 02.d4                 bmi	#4		 
+00001328 a5.23                 movs	r3, #165		 
+0000132A 03.9a                 ldr	r2, [sp, #12]		 
+0000132C 13.73                 strb	r3, [r2, #12]		 
+--- C:\Users\Tim\OneDrive\Tim\Documents\Technical\Develop\BattleBot\ESC\Debug/../../../ARM/ArmLib/Nvm/EepromMgr.h 
+	void Process()
+0000132E 23.00                 movs	r3, r4		 
+--- C:\Users\Tim\OneDrive\Tim\Documents\Technical\Develop\BattleBot\ESC\Debug/../../../ARM/ArmLib/Nvm/EepromMgr.h 
+00001330 20.00                 movs	r0, r4		 
+00001332 9c.33                 adds	r3, #156		 
+--- No source file -------------------------------------------------------------
+00001334 1b.78                 ldrb	r3, [r3]		 
+00001336 50.30                 adds	r0, #80		 
+00001338 00.2b                 cmp	r3, #0		 
+0000133A 01.d0                 beq	#2		 
+0000133C ff.f7.84.fe           bl	#-760		 
+--- C:\Users\Tim\OneDrive\Tim\Documents\Technical\Develop\BattleBot\ESC\Debug/../../../ARM/ArmLib/IoBuf/IoBuf.h 
+	bool IsByteReady()		{ return m_pbNextRcvIn != m_pbNextRcvOut; }
+00001340 61.48                 ldr	r0, [pc, #388]		 
+00001342 43.69                 ldr	r3, [r0, #20]		 
+--- No source file -------------------------------------------------------------
+00001344 c2.68                 ldr	r2, [r0, #12]		 
+00001346 93.42                 cmp	r3, r2		 
+00001348 11.d0                 beq	#34		 
+--- C:\Users\Tim\OneDrive\Tim\Documents\Technical\Develop\BattleBot\ESC\Debug/.././Esc.cpp 
+			byte	ch;
+			
+			ch = Console.ReadByte();
+0000134A ff.f7.7d.f9           bl	#-3334		 
+			if (ch >= 'A' && ch <= 'Z')
+0000134E 03.00                 movs	r3, r0		 
+00001350 41.3b                 subs	r3, #65		 
+--- No source file -------------------------------------------------------------
+00001352 db.b2                 uxtb	r3, r3		 
+00001354 19.2b                 cmp	r3, #25		 
+00001356 01.d8                 bhi	#2		 
+00001358 20.30                 adds	r0, #32		 
+0000135A c0.b2                 uxtb	r0, r0		 
+0000135C 77.28                 cmp	r0, #119		 
+0000135E 06.d1                 bne	#12		 
+00001360 64.48                 ldr	r0, [pc, #400]		 
+00001362 00.f0.d3.fb           bl	#1958		 
+00001366 fe.e7                 b	#-4		 
+00001368 05.22                 movs	r2, #5		 
+0000136A 93.43                 bics	r3, r2		 
+0000136C ab.e7                 b	#-170		 
+
+v. 9.3.1
+addr: 1340, line: 86, file: 17, stmt: False
+addr: 1340, line: 360, file: 5, stmt: True
+addr: 1340, line: 33, file: 2, stmt: True
+addr: 1340, line: 33, file: 2, stmt: True
+addr: 1340, line: 33, file: 2, stmt: False
+addr: 1344, line: 33, file: 2, stmt: False
+addr: 1344, line: 360, file: 5, stmt: False
+addr: 134A, line: 362, file: 5, stmt: True
+addr: 134A, line: 364, file: 5, stmt: True
+addr: 134A, line: 364, file: 5, stmt: False
+addr: 134E, line: 365, file: 5, stmt: True
+addr: 134E, line: 365, file: 5, stmt: False
+addr: 1352, line: 365, file: 5, stmt: False
+addr: 1358, line: 366, file: 5, stmt: True
+addr: 1358, line: 366, file: 5, stmt: False
+addr: 135A, line: 366, file: 5, stmt: False
+addr: 135C, line: 368, file: 5, stmt: True
+addr: 1360, line: 371, file: 5, stmt: True
+addr: 1360, line: 373, file: 5, stmt: True
+addr: 1360, line: 373, file: 5, stmt: False
+addr: 1362, line: 373, file: 5, stmt: False
+
+v. 6.3.1
+addr 1436, line 33, file: 2
+addr 143E, line 360, file: 5
+addr 1444, line 364, file: 5
+addr 144C, line 365, file: 5
+addr 1456, line 366, file: 5
+addr 145A, line 368, file: 5
+addr 145E, line 373, file: 5
+addr 1466, line 320, file: 5
+addr 146C, line 267, file: 15
+
+addr: 104, line: 124, file: 1, stmt: True
+addr: 10E, line: 130, file: 1, stmt: True
+addr: 112, line: 132, file: 1, stmt: True
+addr: 118, line: 133, file: 1, stmt: True
+addr: 11C, line: 134, file: 1, stmt: True
+addr: 11E, line: 135, file: 1, stmt: True
+addr: 120, line: 136, file: 1, stmt: False
+addr: 120, line: 162, file: 1, stmt: True
+addr: 126, line: 167, file: 1, stmt: True
+addr: 12A, line: 168, file: 1, stmt: True
+addr: 130, line: 169, file: 1, stmt: True
+addr: 138, line: 170, file: 1, stmt: True
+addr: 13C, line: 171, file: 1, stmt: False
+addr: 13C, line: 176, file: 1, stmt: True
+addr: 13E, line: 181, file: 1, stmt: True
+addr: 142, line: 182, file: 1, stmt: True
+addr: 148, line: 183, file: 1, stmt: True
+addr: 14A, line: 184, file: 1, stmt: True
+addr: 14E, line: 185, file: 1, stmt: False
+addr: 150, line: 193, file: 1, stmt: True
+addr: 158, line: 782, file: 2, stmt: True
+addr: 15C, line: 783, file: 2, stmt: True
+addr: 160, line: 198, file: 1, stmt: True
+addr: 168, line: 200, file: 1, stmt: True
+addr: 170, line: 201, file: 1, stmt: True
+addr: 178, line: 204, file: 1, stmt: True
+addr: 17C, line: 210, file: 1, stmt: True
+addr: 184, line: 207, file: 1, stmt: True
+addr: 186, line: 279, file: 1, stmt: True
+addr: 18C, line: 281, file: 1, stmt: True
+addr: 18E, line: 284, file: 1, stmt: True
+addr: 192, line: 286, file: 1, stmt: True
+addr: 196, line: 287, file: 1, stmt: True
+addr: 198, line: 289, file: 1, stmt: True
+addr: 19A, line: 291, file: 1, stmt: True
+addr: 1A6, line: 292, file: 1, stmt: True
+addr: 1B4, line: 293, file: 1, stmt: True
+addr: 1BA, line: 294, file: 1, stmt: True
+addr: 1BC, line: 295, file: 1, stmt: True
+addr: 1E0, line: 296, file: 1, stmt: False
+addr: 1E0, line: 187, file: 1, stmt: True
+addr: 1E8, line: 190, file: 1, stmt: True
+addr: 1F0, line: 191, file: 1, stmt: False
+addr: 1F0, line: 220, file: 1, stmt: True
+addr: 1FE, line: 226, file: 1, stmt: True
+addr: 204, line: 227, file: 1, stmt: True
+addr: 20A, line: 228, file: 1, stmt: True
+addr: 210, line: 230, file: 1, stmt: True
+addr: 214, line: 231, file: 1, stmt: False
+addr: 214, line: 233, file: 1, stmt: True
+addr: 22A, line: 236, file: 1, stmt: True
+addr: 232, line: 237, file: 1, stmt: True
+addr: 238, line: 238, file: 1, stmt: False
+addr: 238, line: 240, file: 1, stmt: True
+addr: 244, line: 244, file: 1, stmt: True
+addr: 248, line: 245, file: 1, stmt: True
+addr: 25A, line: 244, file: 1, stmt: True
+addr: 25C, line: 246, file: 1, stmt: True
+addr: 26A, line: 248, file: 1, stmt: False
+addr: 26A, line: 47, file: 4, stmt: True
+addr: 276, line: 50, file: 4, stmt: True
+addr: 280, line: 51, file: 4, stmt: False
+addr: 280, line: 26, file: 5, stmt: True
+addr: 294, line: 32, file: 5, stmt: True
+addr: 29C, line: 63, file: 5, stmt: True
+addr: 2A4, line: 65, file: 5, stmt: True
+addr: 2A6, line: 34, file: 5, stmt: True
+addr: 2BA, line: 37, file: 5, stmt: True
+addr: 2C6, line: 39, file: 5, stmt: True
+addr: 2D0, line: 41, file: 5, stmt: True
+addr: 2DA, line: 42, file: 5, stmt: True
+addr: 2E4, line: 55, file: 5, stmt: True
+addr: 2E8, line: 58, file: 5, stmt: True
+addr: 2F6, line: 59, file: 5, stmt: True
+addr: 304, line: 45, file: 5, stmt: True
+addr: 318, line: 48, file: 5, stmt: True
+addr: 324, line: 50, file: 5, stmt: True
+addr: 326, line: 30, file: 6, stmt: True
+addr: 32A, line: 31, file: 6, stmt: True
+addr: 32C, line: 32, file: 6, stmt: True
+addr: 32E, line: 33, file: 6, stmt: True
+addr: 336, line: 34, file: 6, stmt: True
+addr: 338, line: 35, file: 6, stmt: True
+addr: 340, line: 52, file: 5, stmt: True
+addr: 34C, line: 54, file: 5, stmt: True
+addr: 364, line: 54, file: 5, stmt: False
+addr: 364, line: 72, file: 5, stmt: True
+addr: 374, line: 110, file: 5, stmt: True
+addr: 37C, line: 111, file: 5, stmt: True
+addr: 380, line: 83, file: 5, stmt: True
+addr: 384, line: 86, file: 5, stmt: True
+addr: 3A0, line: 87, file: 5, stmt: True
+addr: 3C0, line: 95, file: 5, stmt: True
+addr: 3C2, line: 98, file: 5, stmt: True
+addr: 3C6, line: 101, file: 5, stmt: True
+addr: 3CC, line: 102, file: 5, stmt: True
+addr: 3CE, line: 103, file: 5, stmt: True
+addr: 3D4, line: 104, file: 5, stmt: True
+addr: 3DA, line: 105, file: 5, stmt: True
+addr: 3E6, line: 106, file: 5, stmt: True
+addr: 3F8, line: 107, file: 5, stmt: True
+
+Line List
+addr: 237C, line: 27, file: 1, stmt: True
+addr: 237E, line: 28, file: 1, stmt: True
+addr: 2382, line: 31, file: 1, stmt: True
+addr: 2394, line: 34, file: 1, stmt: True
+addr: 239C, line: 34, file: 1, stmt: False
+Line List
+addr: 237C, line: 27, file: 1, stmt: True
+addr: 237E, line: 28, file: 1, stmt: True
+addr: 2382, line: 31, file: 1, stmt: True
+addr: 2394, line: 34, file: 1, stmt: True
+addr: 239C, line: 34, file: 1, stmt: False
