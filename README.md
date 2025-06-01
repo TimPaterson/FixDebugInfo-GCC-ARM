@@ -1,10 +1,10 @@
-# Restore Atmel Studio debugging after upgrading to ARM GCC 9.3
-When using Atmel Studio to develop for an ARM MCU there are significant 
+# Restore Microchip Studio debugging after upgrading to ARM GCC 9.3
+When using Microchip Studio to develop for an ARM MCU there are significant 
 advantages to upgrading the ancient GCC 6 compiler shipped with AS7.
 The [GCC 9 compiler](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm)
 provides support through C++17 and appears to generate noticeably smaller
 code. However, the debugging information -- specifically the mapping
-from address to source line -- confuses the Atmel Studio debugger. This
+from address to source line -- confuses the Microchip Studio debugger. This
 results in an inability to set breakpoints on a source line and step
 through code at the source level.
 
@@ -15,8 +15,8 @@ same line. This baffles the disassembler in the debugger (but
 not the disassembler in the objdump utility).
 
 FixDebugInfo corrects this by passing over the executable `.elf` file
-and rewriting the line mapping info for each compilation unit in
-place. This can be added as a post-build step in Atmel Studio
+and rewriting the line mapping info for each compilation unit. This 
+can be added as a post-build step in Microchip Studio
 (assuming FixDebugInfo.exe is in the search path):
 
 `FixDebugInfo $(OutputDirectory)\$(OutputFileName)$(OutputFileExtension)`
@@ -27,12 +27,15 @@ FixDebugInfo can also simply dump the line number information to
 
 `FixDebugInfo file.elf /d >file.txt`
 ### Program Notes
-This program is written in C# and requires the .NET framework. It might
-work only on Windows 10.
+This program is written in C# and requires .NET 9.0. 
 
-To keep it simple, the program makes the assumption that the line number
-information for all compilation units is contiguous. This is not guaranteed
-but happens to be true, at least for GCC 9.3.1.
+The orignal version of this program modified the `.elf` file in place, and 
+was unsuccessful if that wouldn't work. The program now fully rewrites the
+`.elf` file and no longer fails.
+
+Compilers since GCC 9.3.1 seem to have further changed details of their
+debugging information. Even after running FixDebugInfo, Microchip Studio
+doesn't like it.
 ### Example
 Here is snippet of code that demonstrates the problem and solution.
 First, here is the listing file produced by objdump of GCC 9.3.1 code:
@@ -63,7 +66,7 @@ First, here is the listing file produced by objdump of GCC 9.3.1 code:
     1368:   2205        movs    r2, #5
     136a:   4393        bics    r3, r2
     136c:   e7ab        b.n 12c6 <main+0x162>
-However, the disassembly in the Atmel Studio debugger looks like this:
+However, the disassembly in the Microchip Studio debugger looks like this:
 
                 if (ch >= 'A' && ch <= 'Z')
     0000134E 03.00                 movs r3, r0       
@@ -121,7 +124,7 @@ of address or line number):
     addr: 1366, line: 374, file: 5, stmt: True
     addr: 1368, line: 320, file: 5, stmt: True
     addr: 136E, line: 267, file: 15, stmt: True
-Now the Atmel Studio debugger disassembly has it right:
+Now the Microchip Studio debugger disassembly has it right:
 
                 if (ch >= 'A' && ch <= 'Z')
     0000134E 03.00                 movs r3, r0       
